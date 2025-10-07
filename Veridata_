@@ -1,0 +1,385 @@
+Oracle Fusion Middleware Installation:
+======================================
+
+
+Aws s3 cp s3://veridata-software/fmw_12.2.1.4.0_infrastructure.jar .
+Was s3 cp s3://veridata-software/fmw_12.2.1.4.0_ogg.jar .
+
+Cd /u01/app/Middleware/software/
+
+Cat weblogic.rsp
+
+Response File Version=1.0.0.0.0
+ORACLE_HOME=/u01/app/veridata/Middleware
+DECLINE_AUTO_UPDATES=false
+CUSTOM_TYPE=false
+INSTALL_TYPE=Fusion Middleware Infrastructure
+
+
+java -Xmx2048m -jar /u01/app/veridata/fmw_12.2.1.4.0_infrastructure.jar -silent -responseFile  /u01/app/veridata/weblogic.rsp -invPtrLoc /u01/app/veridata/oraInventory/oraInst.loc
+
+
+[oracle@ip-10-77-146-200 app]$     ORACLE_BASE=/u01/app
+[oracle@ip-10-77-146-200 app]$  java -Xmx2048m -jar $v_SOFTWARE/fmw_12.2.1.4.0_infrastructure.jar -silent -responseFile  $v_SOFTWARE/weblogic.rsp -invPtrLoc /u01/app/oraInst.loc
+Launcher log file is /tmp/OraInstall2023-01-19_01-33-46PM/launcher2023-01-19_01-33-46PM.log.
+Extracting the installer . . . . . . Done
+Java HotSpot(TM) Server VM warning: You have loaded library /tmp/orcl2930011231535862653.tmp/Disk1/install/linux/libjni.so which might have disabled stack guard. The VM will try to fix the stack guard now.
+It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
+Checking if CPU speed is above 300 MHz.   Actual 1476.792 MHz    Passed
+Checking swap space: must be greater than 512 MB.   Actual 30719 MB    Passed
+Checking if this platform requires a 64-bit JVM.   Actual 32    Passed (64-bit not required)
+Checking temp space: must be greater than 300 MB.   Actual 97278 MB    Passed
+Preparing to launch the Oracle Universal Installer from /tmp/OraInstall2023-01-19_01-33-46PM
+Log: /tmp/OraInstall2023-01-19_01-33-46PM/install2023-01-19_01-33-46PM.log
+Copyright (c) 1996, 2019, Oracle and/or its affiliates. All rights reserved.
+Reading response file..
+Skipping Software Updates
+Starting check : CertifiedVersions
+Problem: This Oracle software was not certified on the current operating system at the time it was made generally available. It may have been certified following general availability.
+
+Recommendation: Check the Supported System Configurations Guide (http://www.oracle.com/technetwork/middleware/ias/downloads/fusion-certification-100350.html) for further details. If your operating system is certified and no other prerequisite checks have failed, press "Next" if you wish to continue.
+
+Expected result: One of oracle-6, oracle-7, redhat-7, redhat-6, SuSE-11, SuSE-12, SuSE-15
+Actual result: SuSE-2
+Warning: Check:CertifiedVersions completed with warnings.
+
+
+Starting check : CheckJDKVersion
+Expected result: 1.8.0_191
+Actual Result: 1.8.0_341
+Check complete. The overall result of this check is: Passed
+CheckJDKVersion Check: Success.
+
+
+Validations are enabled for this session.
+Verifying data
+Copying Files
+Percent Complete : 10
+Percent Complete : 20
+Percent Complete : 30
+Percent Complete : 40
+Percent Complete : 50
+Percent Complete : 60
+Percent Complete : 70
+Percent Complete : 80
+Percent Complete : 90
+Percent Complete : 100
+
+The installation of Oracle Fusion Middleware 12c Infrastructure 12.2.1.4.0 completed successfully.
+Logs successfully copied to /u01/app/oraInventory/logs.
+
+
+GoldenGate Veridata Web Server Installation
+============================================
+
+[oracle@ip-10-77-146-200 software]$  v_SOFTWARE=/u01/app/veridata/software
+[oracle@ip-10-77-146-200 software]$  java -Xmx2048m -jar $v_SOFTWARE/fmw_12.2.1.4.0_ogg.jar -silent -responseFile  $v_SOFTWARE/veridata.rsp -invPtrLoc /u01/app/oraInst.loc
+Launcher log file is /tmp/OraInstall2023-01-19_01-41-25PM/launcher2023-01-19_01-41-25PM.log.
+Extracting the installer . . . . Done
+Java HotSpot(TM) Server VM warning: You have loaded library /tmp/orcl3128503413409186426.tmp/Disk1/install/linux/libjni.so which might have disabled stack guard. The VM will try to fix the stack guard now.
+It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
+Checking if CPU speed is above 300 MHz.   Actual 1215.511 MHz    Passed
+Checking swap space: must be greater than 512 MB.   Actual 30719 MB    Passed
+Checking if this platform requires a 64-bit JVM.   Actual 32    Passed (64-bit not required)
+Checking temp space: must be greater than 300 MB.   Actual 98567 MB    Passed
+Preparing to launch the Oracle Universal Installer from /tmp/OraInstall2023-01-19_01-41-25PM
+Log: /tmp/OraInstall2023-01-19_01-41-25PM/install2023-01-19_01-41-25PM.log
+Copyright (c) 1996, 2019, Oracle and/or its affiliates. All rights reserved.
+Reading response file..
+Skipping Software Updates
+Starting check : CertifiedVersions
+Problem: This Oracle software was not certified on the current operating system at the time it was made generally available. It may have been certified following general availability.
+
+Recommendation: Check the Supported System Configurations Guide (http://www.oracle.com/technetwork/middleware/ias/downloads/fusion-certification-100350.html) for further details. If your operating system is certified and no other prerequisite checks have failed, press "Next" if you wish to continue.
+
+Expected result: One of oracle-6, oracle-7, redhat-7, redhat-6, SuSE-11, SuSE-12, SuSE-15
+Actual result: SuSE-2
+Warning: Check:CertifiedVersions completed with warnings.
+
+
+Starting check : CheckJDKVersion
+Expected result: 1.8.0_191
+Actual Result: 1.8.0_341
+Check complete. The overall result of this check is: Passed
+CheckJDKVersion Check: Success.
+
+
+Validations are enabled for this session.
+Verifying data
+Copying Files
+Percent Complete : 10
+Percent Complete : 20
+Percent Complete : 30
+Percent Complete : 40
+Percent Complete : 50
+Percent Complete : 60
+Percent Complete : 70
+Percent Complete : 80
+Percent Complete : 90
+Percent Complete : 100
+
+The installation of Oracle Fusion Middleware 12c GoldenGate Veridata 12.2.1.4.0 completed successfully.
+Logs successfully copied to /u01/app/oraInventory/logs.
+[oracle@ip-10-77-146-200 software]$ 
+
+Repository Installation:
+========================
+
+cd /u01/app/veridata/Middleware/oracle_common/bin
+
+[oracle@ip-10-77-146-200 bin]$ ./rcu -silent -responseFile /u01/app/veridata/software/rcuResponseFile.properties
+
+	RCU Logfile: /tmp/RCU2023-01-19_13-50_99242787/logs/rcu.log
+
+Enter the database password(User:dbadmin):
+
+Processing command line ....
+Repository Creation Utility - Checking Prerequisites
+Checking Global Prerequisites
+Enter the schema password. This password will be used for all schema users of following components:STB,OPSS,VERIDATA,IAU,IAU_APPEND,IAU_VIEWER,WLS.
+
+Repository Creation Utility - Checking Prerequisites
+Checking Component Prerequisites
+Repository Creation Utility - Creating Tablespaces
+Validating and Creating Tablespaces
+Create tablespaces in the repository database
+Repository Creation Utility - Create
+Repository Create in progress.
+Executing pre create operations
+        Percent Complete: 20
+        Percent Complete: 20
+        Percent Complete: 22
+        Percent Complete: 24
+        Percent Complete: 26
+        Percent Complete: 26
+        Percent Complete: 28
+        Percent Complete: 28
+Creating Common Infrastructure Services(STB)
+        Percent Complete: 36
+        Percent Complete: 36
+        Percent Complete: 46
+        Percent Complete: 46
+        Percent Complete: 46
+Creating Audit Services Append(IAU_APPEND)
+        Percent Complete: 54
+        Percent Complete: 54
+        Percent Complete: 64
+        Percent Complete: 64
+        Percent Complete: 64
+Creating Audit Services Viewer(IAU_VIEWER)
+        Percent Complete: 72
+        Percent Complete: 72
+        Percent Complete: 72
+        Percent Complete: 73
+        Percent Complete: 73
+        Percent Complete: 74
+        Percent Complete: 74
+        Percent Complete: 74
+Creating Weblogic Services(WLS)
+        Percent Complete: 79
+        Percent Complete: 79
+        Percent Complete: 83
+        Percent Complete: 83
+        Percent Complete: 92
+        Percent Complete: 99
+        Percent Complete: 99
+Creating Audit Services(IAU)
+        Percent Complete: 100
+Creating Oracle Platform Security Services(OPSS)
+Creating Veridata Repository(VERIDATA)
+Executing post create operations
+
+Repository Creation Utility: Create - Completion Summary
+
+Database details:
+-----------------------------
+Host Name                                    : vrdprd01.cdkc9vj5veje.us-west-2.rds.amazonaws.com
+Port                                         : 1441
+Service Name                                 : VRDPRD01
+Connected As                                 : dbadmin
+Prefix for (prefixable) Schema Owners        : S
+RCU Logfile                                  : /tmp/RCU2023-01-19_13-50_99242787/logs/rcu.log
+
+Component schemas created:
+-----------------------------
+Component                                    Status         Logfile
+
+Common Infrastructure Services               Success        /tmp/RCU2023-01-19_13-50_99242787/logs/stb.log
+Oracle Platform Security Services            Success        /tmp/RCU2023-01-19_13-50_99242787/logs/opss.log
+Veridata Repository                          Success        /tmp/RCU2023-01-19_13-50_99242787/logs/veridata.log
+Audit Services                               Success        /tmp/RCU2023-01-19_13-50_99242787/logs/iau.log
+Audit Services Append                        Success        /tmp/RCU2023-01-19_13-50_99242787/logs/iau_append.log
+Audit Services Viewer                        Success        /tmp/RCU2023-01-19_13-50_99242787/logs/iau_viewer.log
+WebLogic Services                            Success        /tmp/RCU2023-01-19_13-50_99242787/logs/wls.log
+
+Repository Creation Utility - Create : Operation Completed
+[oracle@ip-10-77-146-200 bin]$
+
+4) Domain Creation:
+==================
+cd /u01/app/veridata/Middleware/veridata/bin
+
+[oracle@ip-10-77-146-200 bin]$ ./domain_silent.sh /u01/app/veridata/domain_silent.properties
+
+
+# Copyright (c) 2013, 2017, Oracle and/or its affiliates. All rights reserved.
+
+#Path of Oracle home/FMW home directory
+ORACLE_HOME=/u01/app/veridata/Middleware
+
+#Path of domain to be created. Specify along with domain name
+DOMAIN_LOCATION=/u01/app/veridata/Middleware/user_projects/domains/base_domain
+
+#database hostname
+DB_HOST=vrdprd01.cdkc9vj5veje.us-west-2.rds.amazonaws.com
+##DB_HOST=localhost
+
+#database port
+DB_PORT=1441
+
+#database service name
+DB_SERVICE=VRDPRD01
+
+#database schema prefix
+SCHEMA_PREFIX=F
+
+#Hostname/Server where the weblogic is deployed
+WEBLOGIC_SERVER=localhost
+
+#port of weblogic server
+WEBLOGIC_PORT=7001
+
+#Hostname/Server where the Veridata is deployed
+VERIDATA_SERVER=localhost
+
+#port of veridata application
+VERIDATA_PORT=8830
+
+#This key specifies whether the password should be secured or not. Value should be 'y' or 'n'.
+#If set to 'y' credentials would be read from commandline otherwise it has to be set in below keys
+USE_SECURE_PASSWORD=n
+
+#Note: Update below keys only when USE_SECURE_PASSWORD=n
+
+#User of Weblogic Application
+WEBLOGIC_USER=weblogic
+
+#Password of weblogic user
+WEBLOGIC_PWD=intuit01
+
+#Database schema password
+SCHEMA_PASSWORD=intuit01
+
+#This key specifies whether same SCHEMA_PASSWORD set above should be used for all schemas.
+#Value can be 'y' or 'n'
+USE_COMMON_SCHEMA_PASSWORD=y
+
+#Note: Update below keys only when USE_SECURE_PASSWORD=n and USE_COMMON_SCHEMA_PASSWORD=n
+
+#Password for schema <Prefix>_VERIDATA
+VERIDATA_PWD=
+
+#Password for schema <Prefix>_IAU_APPEND
+IAU_APPEND_PWD=
+
+#Password for schema <Prefix>_OPSS
+OPSS_PWD=
+
+#Password for schema <Prefix>_STB
+STB_PWD=
+
+#Password for schema <Prefix>_IAU_VIEWER
+IAU_VIEWER_PWD=
+
+
+Initiating domain creation in silent mode.
+
+Creating domain /u01/app/veridata/Middleware/user_projects/domains/base_domain ...
+
+Initializing WebLogic Scripting Tool (WLST) ...
+
+Welcome to WebLogic Server Administration Scripting Shell
+
+Type help() for help on available commands
+
+Jan 19, 2023 2:04:56 PM oracle.security.jps.az.internal.runtime.policy.AbstractPolicyImpl initializeReadStore
+INFO: Property for read store in parallel: oracle.security.jps.az.runtime.readstore.threads = null
+
+
+Exiting WebLogic Scripting Tool.
+
+Domain /u01/app/veridata/Middleware/user_projects/domains/base_domain created successfully.
+Admin Server URL: http://localhost:7001/console
+
+
+ 
+
+5) Oracle VERIDATA Agent Silent Install 
+=====================================
+
+$JAVA_HOME/bin/java -jar /u01/app/veridata/software/fmw_12.2.1.4.0_ogg.jar -silent -responseFile /u01/app/veridata/software/vd_agent_install.rsp -invPtrLoc /u01/app/oraInst.loc
+
+
+
+
+[oracle@ip-10-77-146-200 software]$ $JAVA_HOME/bin/java -jar /u01/app/veridata/software/fmw_12.2.1.4.0_ogg.jar -silent -responseFile /u01/app/veridata/software/vd_agent_install.rsp -invPtrLoc /u01/app/oraInst.loc
+Launcher log file is /tmp/OraInstall2023-01-19_02-56-16PM/launcher2023-01-19_02-56-16PM.log.
+Extracting the installer . . . . Done
+Java HotSpot(TM) Server VM warning: You have loaded library /tmp/orcl3839370573582305804.tmp/Disk1/install/linux/libjni.so which might have disabled stack guard. The VM will try to fix the stack guard now.
+It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
+Checking if CPU speed is above 300 MHz.   Actual 1341.580 MHz    Passed
+Checking swap space: must be greater than 512 MB.   Actual 30719 MB    Passed
+Checking if this platform requires a 64-bit JVM.   Actual 32    Passed (64-bit not required)
+Checking temp space: must be greater than 300 MB.   Actual 98176 MB    Passed
+Preparing to launch the Oracle Universal Installer from /tmp/OraInstall2023-01-19_02-56-16PM
+Log: /tmp/OraInstall2023-01-19_02-56-16PM/install2023-01-19_02-56-16PM.log
+Copyright (c) 1996, 2019, Oracle and/or its affiliates. All rights reserved.
+Reading response file..
+Skipping Software Updates
+Starting check : CertifiedVersions
+Problem: This Oracle software was not certified on the current operating system at the time it was made generally available. It may have been certified following general availability.
+
+Recommendation: Check the Supported System Configurations Guide (http://www.oracle.com/technetwork/middleware/ias/downloads/fusion-certification-100350.html) for further details. If your operating system is certified and no other prerequisite checks have failed, press "Next" if you wish to continue.
+
+Expected result: One of oracle-6, oracle-7, redhat-7, redhat-6, SuSE-11, SuSE-12, SuSE-15
+Actual result: SuSE-2
+Warning: Check:CertifiedVersions completed with warnings.
+
+
+Starting check : CheckJDKVersion
+Expected result: 1.8.0_191
+Actual Result: 1.8.0_341
+Check complete. The overall result of this check is: Passed
+CheckJDKVersion Check: Success.
+
+
+Validations are enabled for this session.
+Verifying data
+Copying Files
+Percent Complete : 10
+Percent Complete : 20
+Percent Complete : 30
+Percent Complete : 40
+Percent Complete : 50
+Percent Complete : 60
+Percent Complete : 70
+Percent Complete : 80
+Percent Complete : 90
+Percent Complete : 100
+
+The installation of Oracle Fusion Middleware 12c GoldenGate Veridata 12.2.1.4.0 completed successfully.
+Logs successfully copied to /u01/app/oraInventory/logs.
+[oracle@ip-10-77-146-200 software]$
+
+
+
+[oracle@ip-10-77-146-200 bin]$
+
+[oracle@pl-p1-mgmt-con-01 bin]$ nohup ./startManagedWebLogic.sh VERIDATA_server1 http://localhost:7001/console > localhost.log &
+
+
+nohup sh startWebLogic.sh -Dweblogic.management.username=weblogic  -Dweblogic.management.password=intuit01 &
+
+
+
+
