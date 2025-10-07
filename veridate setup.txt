@@ -1,0 +1,31 @@
+source info:
+
+Mandatory step : SCL port needs to be open from veridate server to souce and target.
+
+
+1) Login to the veridate server (psysvrddbk01)
+
+2) chekc the agent base location i.e. /u01/veridata/agent/
+
+3) Go to the agent base location and create the source directory name i.e server name (ex:ppdserslvkd1)
+
+4) copy the files from existing directoty server to new directory server location
+     these are the fiels 
+VAOH.sh
+drivers
+config
+agent.sh
+configure_agent_ssl.sh
+logs
+agent.properties
+
+5) Modified the agent.properties file to tns entry of the source server (ppdserslvkd1) and Port number (which is not usable)
+
+6) start the agent by running the agent.sh script ( ./agent.sh start )
+
+    export JAVA_HOME=/usr/java/jdk1.8.0_121 - example
+
+7) we will find the logs in logs directory.
+
+8) Similarly we have to setup for the target.
+	 
