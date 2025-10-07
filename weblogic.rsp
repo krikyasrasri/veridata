@@ -1,0 +1,5 @@
+Response File Version=1.0.0.0.0
+ORACLE_HOME=/u01/app/veridata/Middleware
+DECLINE_AUTO_UPDATES=false
+CUSTOM_TYPE=false
+INSTALL_TYPE=Fusion Middleware Infrastructure
